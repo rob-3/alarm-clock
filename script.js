@@ -24,11 +24,11 @@ const setReminder = () => {
   textbox.value = "";
 
   // Get the selected time options
-  let hours = hoursOption.value;
-  const minutes = minutesOption.value;
-  const seconds = secondsOption.value;
+  let hours = Number(hoursOption.value);
+  const minutes = Number(minutesOption.value);
+  const seconds = Number(secondsOption.value);
   const ampm = ampmOption.value;
-  if (ampm === "pm") {
+  if (ampm === "PM") {
     hours += 12;
   }
 
@@ -45,10 +45,11 @@ const setReminder = () => {
   };
   //const reminder = new Reminder(date, reminderText);
   reminderList.push(reminder);
+
+  console.log("Registered a new reminder.");
 };
 
 const checkReminders = () => {
-  const now = new Date();
   /*
   for (let i = 0; i < reminders.length; i++) {
     if (now.getTime() >= reminders[i].date.getTime()) {
@@ -64,11 +65,13 @@ const checkReminders = () => {
   }
   */
   reminderList.forEach(r => {
-    if (now.getTime() >= r.date.getTime()) {
+    if (r.date <= new Date()) {
       reminderList.splice(reminderList.indexOf(r), 1);
       alert(r.text);
     }
   });
+
+  console.log("Checked all reminders.");
 }
 
 const updateClock = () => {
