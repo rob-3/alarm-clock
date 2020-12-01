@@ -1,3 +1,8 @@
+/*
+ * Throughout I try to show a few different ways that you will see people do
+ * things in JavaScript. It isn't an opinionated language, and there are often
+ * different ways to achieve the same task, even for simple things.
+ */
 const clock = document.querySelector("#clock");
 const reminders = document.querySelector("#reminders");
 const button = document.querySelector("#button");
