@@ -7,5 +7,45 @@ p {
 }
 
 body {
+  background-color: #68ddfd;
+}
+
+h1 {
+  font-size: 150px;
+}
+
+.line {
   background-color: #03c6fc;
+  padding: 12px 8px 12px 40px;
+  margin: 10px;
+  display: inline-block;
+  font-size: 80px;
+  border-radius: 10px;
+  border: 2px solid black;
+}
+
+select {
+  font-size: 40px;
+  -moz-appearance: none;
+}
+
+option {
+  font-size: 20px;
+}
+
+input {
+  width: 500px;
+  height: 50px;
+  font-size: 50px;
+}
+
+button {
+  background-color: #01637e;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
 }
