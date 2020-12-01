@@ -89,6 +89,8 @@ button.addEventListener("click", setReminder);
 
 setInterval(checkReminders, 1000);
 
+updateClock();
+
 // A simple data class, similar to a struct in C
 /*
 class Reminder {
