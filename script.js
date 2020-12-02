@@ -3,8 +3,8 @@
  * things in JavaScript. It isn't an opinionated language, and there are often
  * different ways to achieve the same task, even for simple things.
  */
+// DOM References
 const clock = document.querySelector("#clock");
-const reminders = document.querySelector("#reminders");
 const button = document.querySelector("#button");
 const textbox = document.querySelector("#textbox");
 const hoursOption = document.querySelector("#hours");
@@ -52,15 +52,17 @@ const setReminder = () => {
 const checkReminders = () => {
   /*
   for (let i = 0; i < reminders.length; i++) {
-    if (now.getTime() >= reminders[i].date.getTime()) {
-      alert("Reminder!");
+    if (reminders[i].date <= new Date()) {
+      reminderList.splice(i, 1);
+      alert(reminders[i].text);
     }
   }
   */
   /*
   for (const r of reminders) {
-    if (now.getTime() >= r.date.getTime()) {
-      alert("Reminder!");
+    if (r.date <= new Date()) {
+      reminderList.splice(reminderList.indexOf(r), 1);
+      alert(r.text);
     }
   }
   */
@@ -79,7 +81,7 @@ const updateClock = () => {
   const hours = String(now.getHours());
   const minutes = String(now.getMinutes());
   const seconds = String(now.getSeconds());
-  //clock.innerHTML = hours + ":" + minutes + ":" + seconds;
+  //clock.innerHTML = hours + ":" + minutes.padStart(2, "0") + ":" + seconds.padStart(2, "0");
   clock.innerHTML = `${hours}:${minutes.padStart(2, "0")}:${seconds.padStart(2, "0")}`;
 };
 
